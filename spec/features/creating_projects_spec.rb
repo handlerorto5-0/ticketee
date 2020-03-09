@@ -6,16 +6,16 @@ RSpec.feature "Users can create new projects" do
     click_link "New Project"
   end
   scenario "with valid attributes" do
-    fill_in "Name", with: "NeoVim"
+    fill_in "Name", with: "Vim"
     fill_in "Description", with: "A text editor for everyone"
     click_button "Create Project"
 
     expect(page).to have_content "Project has been created."
 
-    project = Project.find_by(name: "NeoVim")
+    project = Project.find_by(name: "Vim")
     expect(page.current_url).to eq project_url(project)
 
-    title = "NeoVim - Projects - Ticketee"
+    title = "Vim - Projects - Ticketee"
     expect(page).to have_title title 
   end
   scenario "when providing invalid attributes" do
