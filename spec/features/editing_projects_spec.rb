@@ -2,10 +2,10 @@ require "rails_helper"
 
 RSpec.feature "Users can edit existing projects" do
   before do
-    FactoryGirl.create(:project, name: "NeoVim")
+    FactoryGirl.create(:project, name: "Vim")
 
     visit "/"
-    click_link "NeoVim"
+    click_link "Vim"
     click_link "Edit Project"
   end
   scenario "with valid attributes" do
