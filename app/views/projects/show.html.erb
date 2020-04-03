@@ -19,8 +19,10 @@
   <h2>Tickets</h2>
   <ul id="tickets">
     <% @project.tickets.each do |ticket| %>>
-      #<%= ticket.id %> -
-      <%= link_to ticket.name, [@project, ticket] %>
+      <li>
+        #<%= ticket.id %> -
+        <%= link_to ticket.name, [@project, ticket] %>
+      </li>
     <% end %>
   </ul>
   <ul class="actions">
