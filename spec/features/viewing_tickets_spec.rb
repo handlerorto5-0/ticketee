@@ -5,11 +5,11 @@ RSpec.feature "User can veiw tickets" do
     sublime = FactoryGirl.create(:project, name: "Sublime Text 3")
     FactoryGirl.create(:ticket, project: sublime,
                       name: "Make it shiny!",
-                      desctiption: "Gradients! Starbursts! Oh my!")
+                      description: "Gradients! Starbursts! Oh my!")
     ie = FactoryGirl.create(:project, name: "Internet Exporer")
     FactoryGirl.create(:ticket, project: ie,
                       name: "Standarts compliance",
-                      desctiption: "Isn't a joke.")
+                      description: "Isn't a joke.")
 
     visit "/"
   end
