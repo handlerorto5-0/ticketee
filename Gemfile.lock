@@ -146,6 +146,8 @@ GEM
     public_suffix (4.0.3)
     puma (3.12.4)
     puma (3.12.4-java)
+    pundit (2.1.0)
+      activesupport (>= 3.0.0)
     rack (2.2.2)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -293,6 +295,7 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.11)
+  pundit
   rails (~> 5.2.3)
   rspec-rails
   sass-rails (~> 5.0)

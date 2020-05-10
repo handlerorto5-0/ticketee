@@ -45,7 +45,8 @@ gem 'sdoc',  group: :doc
 gem 'bootsnap', '>= 1.1.0', require: false
 # authintication
 gem "devise"
-
+#role
+gem "pundit"
 
 group :development, :test do
   gem "rspec-rails"
