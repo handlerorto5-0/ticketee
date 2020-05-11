@@ -2,10 +2,12 @@
 <header>
   <h1><%= @project.name %></h1>
   <ul class="actions">
-    <li><%= link_to "Edit Projects", 
-      edit_project_path(@project), 
-      class: "edit" 
-    %></li>
+    <% if policy(@project).update? %>
+      <li><%= link_to "Edit Projects", 
+        edit_project_path(@project), 
+        class: "edit" 
+      %></li>
+    <% end %>
     <% admins_only do %>
       <li><%= link_to "Delete Project",
         admin_project_path(@project),
