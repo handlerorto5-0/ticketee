@@ -11,7 +11,6 @@ class ApplicationPolicy
   end
 
   def show?
-    # record.present?
     false
   end
 

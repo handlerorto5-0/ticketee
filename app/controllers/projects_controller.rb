@@ -6,17 +6,15 @@ class ProjectsController < ApplicationController
   end
 
   def show
-  #  @project = Project.find(params[:id])
     authorize @project, :show?
   end
 
   def edit
-  #  @project = Project.find(params[:id])
+    authorize @project, :update?
   end
 
   def update
-    @project = Project.find(params[:id])
-    @project.update(project_params)
+    authorize @project, :update?
     
     if @project.update(project_params)
       flash[:notice] = "Project has been updated."
