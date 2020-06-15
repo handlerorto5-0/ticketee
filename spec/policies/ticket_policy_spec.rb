@@ -14,6 +14,7 @@ RSpec.describe TicketPolicy, type: :policy do
       it {should_not permit_action :show}
       it {should_not permit_action :create}
       it {should_not permit_action :update}
+      it {should_not permit_action :destroy}
     end
     context "for viewers of the project" do
       before {assign_role!(author, :viewer, project)}
@@ -21,6 +22,7 @@ RSpec.describe TicketPolicy, type: :policy do
       it {should permit_action :show}
       it {should_not permit_action :create}
       it {should_not permit_action :update}
+      it {should_not permit_action :destroy}
     end
     context "for editors of the project" do
       before {assign_role!(author, :editor, project)}
@@ -28,6 +30,7 @@ RSpec.describe TicketPolicy, type: :policy do
       it {should permit_action :show}
       it {should permit_action :create}
       it {should permit_action :update}
+      it {should_not permit_action :destroy}
 
       context "when the editor not created the ticket" do
         before { ticket.author = FactoryGirl.create(:user) }
@@ -41,6 +44,7 @@ RSpec.describe TicketPolicy, type: :policy do
       it {should permit_action :show}
       it {should permit_action :create}
       it {should permit_action :update}
+      it {should permit_action :destroy}
     end
     context "for managers of other projects" do
       before do
@@ -50,6 +54,7 @@ RSpec.describe TicketPolicy, type: :policy do
       it {should_not permit_action :show}
       it {should_not permit_action :create}
       it {should_not permit_action :update}
+      it {should_not permit_action :destroy}
     end
     context "for administrators" do
       let(:author) {FactoryGirl.create(:user, :admin)}
@@ -58,6 +63,7 @@ RSpec.describe TicketPolicy, type: :policy do
       it {should permit_action :show}
       it {should permit_action :create}
       it {should permit_action :update}
+      it {should permit_action :destroy}
     end
   end
 
