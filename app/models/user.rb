@@ -1,6 +1,12 @@
 class User < ApplicationRecord
   scope :excluding_archived, -> { where(archived_at: nil) }
 
+  has_many :roles 
+
+  def role_on(project)
+    roles.find_by(project_id: project).try(:name)
+  end
+
   def archive
     self.update(archived_at: Time.now)
   end
