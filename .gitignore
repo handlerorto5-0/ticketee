@@ -32,3 +32,4 @@
 
 # don't commit uploaded files
 /public/uploads
+/uploads
