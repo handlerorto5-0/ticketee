@@ -47,6 +47,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem "devise"
 #role
 gem "pundit"
+# uploading files
+gem 'carrierwave'
 
 group :development, :test do
   gem "rspec-rails"
